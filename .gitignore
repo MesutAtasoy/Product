@@ -1,0 +1,73 @@
+## Ignore build results
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+
+## Rider-specific files
+.idea/
+.idea_modules/
+*.sln.iml
+
+## User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.csproj.user
+
+## VS Code (if someone uses it)
+.vscode/
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Entity Framework
+Migrations/
+
+## Logs
+*.log
+
+## Secrets
+secrets.json
+
+## Other files to ignore
+*.db
+*.sqlite
+*.pdb
+*.cache
+*.bak
+*.tmp
+*.swp
+
+## dotCover
+.idea/.dotCover
+
+## Rider local history (optional)
+.idea/.idea.LocalHistory/
+
+## Mac and Linux system files
+.DS_Store
+*.sw?
+*~
+
+## JetBrains Rider workspace settings
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/httpRequests/
+
+## Resharper settings
+_ReSharper*/
+*.DotSettings.user

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetProductsAsync(RequestContext)">
+      <example>
+This sample shows how to call GetProductsAsync and parse the result.
+<code><![CDATA[
+ProductApiV1Client client = new ProductApiV1Client();
+
+Response response = await client.GetProductsAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetProductsAsync with all parameters and parse the result.
+<code><![CDATA[
+ProductApiV1Client client = new ProductApiV1Client();
+
+Response response = await client.GetProductsAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("sku").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code></example>
+    </member>
+    <member name="GetProducts(RequestContext)">
+      <example>
+This sample shows how to call GetProducts and parse the result.
+<code><![CDATA[
+ProductApiV1Client client = new ProductApiV1Client();
+
+Response response = client.GetProducts(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetProducts with all parameters and parse the result.
+<code><![CDATA[
+ProductApiV1Client client = new ProductApiV1Client();
+
+Response response = client.GetProducts(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("sku").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>
