@@ -17,6 +17,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
+// Minimal API endpoint with comments
 app.MapGet("/products", () =>
     {
         var products = Enumerable.Range(1, 5).Select(index =>
@@ -26,9 +27,12 @@ app.MapGet("/products", () =>
                     Sku = $"SKU{index}"
                 })
             .ToArray();
+
         return products;
     })
     .WithName("GetProducts")
-    .Produces(200, typeof(Product));
+    .Produces(200, typeof(Product[]))
+    .WithSummary("Retrieves a list of sample products.")
+    .WithDescription("Generates and returns five sample products with SKU and name for demo purposes.");
 
 app.Run();

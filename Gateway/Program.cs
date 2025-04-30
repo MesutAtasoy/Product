@@ -1,5 +1,7 @@
 using ApiClient;
 using Azure;
+using Azure.Core.Pipeline;
+using ProductApiClassLibrary;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddSingleton<ProductApiV1Client>();
+builder.Services.AddProductApiClient();
 
 var app = builder.Build();
 
@@ -19,14 +21,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/products",  async (ProductApiV1Client client)  =>
+app.MapGet("/products",  async (ProductClient client)  =>
     {
-        var context = new RequestContext(); // If you need a context for the request
-
-        var response = await client.GetProductsAsync(context);
+        var response = await client.GetProductsAsync();
         
-        return Results.Ok(await new StreamReader(response.ContentStream).ReadToEndAsync());
+        return Results.Ok(response.Value);
     })
-    .WithName("Products ");
+    .WithName("Products");
 
 app.Run();

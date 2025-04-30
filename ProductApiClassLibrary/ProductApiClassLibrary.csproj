@@ -3,17 +3,14 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
-    </PropertyGroup>
-
-    <PropertyGroup>
         <IncludeGeneratorSharedCode>true</IncludeGeneratorSharedCode>
-        <RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json</RestoreAdditionalProjectSources>
+        <RestoreAdditionalProjectSources>https://azuresdkartifacts.blob.core.windows.net/azure-sdk-tools/index.json</RestoreAdditionalProjectSources>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Azure.Core" Version="1.25.0" />
         <PackageReference Include="Microsoft.Azure.AutoRest.CSharp" Version="3.0.0-beta.20221103.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+        <PackageReference Include="System.ClientModel" Version="1.3.0" />
     </ItemGroup>
-
-
 </Project>

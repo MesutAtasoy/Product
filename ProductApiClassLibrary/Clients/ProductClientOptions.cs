@@ -10,8 +10,8 @@ using Azure.Core;
 
 namespace ApiClient
 {
-    /// <summary> Client options for ProductApiV1Client. </summary>
-    public partial class ProductApiV1ClientOptions : ClientOptions
+    /// <summary> Client options for ProductClient. </summary>
+    public partial class ProductClientOptions : ClientOptions
     {
         private const ServiceVersion LatestVersion = ServiceVersion.V1_0_0;
 
@@ -24,8 +24,8 @@ namespace ApiClient
 
         internal string Version { get; }
 
-        /// <summary> Initializes new instance of ProductApiV1ClientOptions. </summary>
-        public ProductApiV1ClientOptions(ServiceVersion version = LatestVersion)
+        /// <summary> Initializes new instance of ProductClientOptions. </summary>
+        public ProductClientOptions(ServiceVersion version = LatestVersion)
         {
             Version = version switch
             {
